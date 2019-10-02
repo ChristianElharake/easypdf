@@ -38,10 +38,6 @@ public class PDFWriter {
 			PDDocument pdfDocument = PDDocument.load(new File(PATH.concat(pdfFile)));
 			PDDocumentCatalog docCatalog = pdfDocument.getDocumentCatalog();
 			PDAcroForm acroForm = docCatalog.getAcroForm();
-			
-			for (PDField field : acroForm.getFields()) {
-				System.err.println(field.getFullyQualifiedName());
-			}
 			for (Entry<String, PDFContextWrapper> entrySet : fields.entrySet()) {
 				PDField field = acroForm.getField(entrySet.getKey());
 				if (field != null) {
