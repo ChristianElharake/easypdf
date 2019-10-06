@@ -6,14 +6,16 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.celharake.easypdf.datamodel.LanguageCode;
+import com.celharake.easypdf.dto.enumeration.LanguageCode;
 
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-@Repeatable(FieldsMapping.class)
-public @interface FieldMapping {
+@Repeatable(Fields.class)
+public @interface Field {
 
-	String key();
+	String name();
 	
 	LanguageCode languageCode();
+	
+	FieldType type() default FieldType.TEXTBOX;
 }

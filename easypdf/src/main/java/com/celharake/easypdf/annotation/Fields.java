@@ -5,12 +5,10 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-import com.celharake.easypdf.dto.enumeration.DocumentCode;
-
-@Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Document {
-
-	DocumentCode documentCode();
-
+@Target(ElementType.METHOD)
+public @interface Fields {
+	
+	Field[] value();
+	
 }

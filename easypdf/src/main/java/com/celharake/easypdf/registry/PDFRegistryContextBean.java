@@ -1,13 +1,13 @@
-package com.celharake.easypdf.context;
+package com.celharake.easypdf.registry;
 
 import java.lang.reflect.Method;
 
-public class PDFContextWrapper {
+public class PDFRegistryContextBean {
 
 	private Object instance;
 	private Method method;
 
-	public PDFContextWrapper(Object instance, Method method) {
+	public PDFRegistryContextBean(Object instance, Method method) {
 		super();
 		this.instance = instance;
 		this.method = method;
